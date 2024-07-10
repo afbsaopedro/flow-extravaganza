@@ -2,6 +2,6 @@
 </script>
 
 <template>
-    <h1>Welcome</h1>
-    <NuxtLink to="/auth">Sign In</NuxtLink>
+    <h1>Home</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget dignissim dolor, quis ullamcorper neque. </p>
 </template>

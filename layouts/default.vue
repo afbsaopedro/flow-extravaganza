@@ -1,30 +1,28 @@
 <script setup lang="ts">
 
-const links = [{
-    label: 'Foo App',
-    to: '/'
+const links = [
+    {
+  label: 'Home',
+  icon: 'i-heroicons-home',
+  to: '/'
 },
 {
-    label: 'Home',
-    to: '/'
+    label: 'Foo',
+    icon: 'i-heroicons-code-bracket',
+    to: '/foo'
 },
 {
     label: 'About',
-    to: '/About'
+    icon: 'i-heroicons-information-circle',
+    to: '/about'
 }
 ]
 
 </script>
 
 <template>
-    <UHorizontalNavigation :links/>
+    <UHorizontalNavigation :links="links"/>
     <UContainer>
         <slot />
     </UContainer>
 </template>
-
-<style scoped>
-.router-link-exact-active {
-    color: #12b488
-}
-</style>
