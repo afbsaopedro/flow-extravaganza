@@ -1,8 +1,23 @@
 <script setup>
 let validator = ref('')
 
-function foo() {
-    alert(validator.value)
+async function foo() {
+    const response = await $fetch('/api/auth/validate', {
+        method: 'POST',
+        body: {
+            validator: validator.value,
+            token: useState('token').value
+        }
+    })
+    .then(response => response)
+    .then(data => data)
+    .catch(error => createError(error))
+
+
+    const token = useState('token')
+    token.value = response.token
+
+    navigateTo(response.redirect)
 }
 </script>
 

@@ -3,7 +3,6 @@ let id = ref('')
 
 async function foo(){
     let validator = 'validator' + id.value
-    alert(id.value + '\n' + validator)
 
     const response = await $fetch('http://localhost:3000/api/new-user', {
         method: 'POST',
@@ -19,6 +18,8 @@ async function foo(){
     .then(response => response.json())
     .then(data => data)
     .catch(error => createError(error))
+
+    navigateTo('/foo')
 }
 </script>
 
