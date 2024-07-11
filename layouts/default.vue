@@ -12,6 +12,11 @@ const links = [
     to: '/foo'
 },
 {
+    label: 'New User',
+    icon: 'i-heroicons-user-plus',
+    to: '/new'
+},
+{
     label: 'About',
     icon: 'i-heroicons-information-circle',
     to: '/about'

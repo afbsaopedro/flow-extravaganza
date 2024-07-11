@@ -25,11 +25,9 @@ async function foo() {
     <br>
     <UInput v-model="id" variant="outline" placeholder="ID"/>
     <br>
+    <UInput v-model="validator" variant="outline" placeholder="Validator"/>
+    <br>
     <UButton @click="foo" variant="outline">Do the foo</UButton>
-    <br>
-    <br>
-    <br>
-    <br>
     <br>
     <br>
     <UTable :rows="users"></UTable>
