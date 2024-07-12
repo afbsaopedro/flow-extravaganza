@@ -1,7 +1,4 @@
 <script setup lang="ts">
-
-const route = useRoute()
-
 const links = [
   [{
     label: 'Home',
