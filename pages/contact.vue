@@ -1,4 +1,5 @@
 <script setup>
+
 const contactEmails = [
     {
         email: 'first.contact.email@service.com',
@@ -35,8 +36,8 @@ const items = [{
 </script>
 
 <template>
-    <h1>Contacts</h1>
-    <UAccordion :items="items">
+    <h1 class="text-4xl font-bold mb-6" >Contacts</h1>
+    <UAccordion variant="solid" size="xl" :items="items">
     <template #email>
       <div class="text-gray-900 dark:text-white text-center">
         <ul class="list-disc list-inside text-left">
