@@ -5,7 +5,7 @@ async function foo() {
     const response = await $fetch('/api/auth/signup', {
         method: 'POST',
         body: {
-            validator: email.value,
+            email: email.value,
             token: useState('token').value
         }
     })
@@ -13,7 +13,7 @@ async function foo() {
     .then(data => data)
     .catch(error => createError(error))
 
-    console.log(response)
+    navigateTo('/login')
 }
 </script>
 

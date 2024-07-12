@@ -10,14 +10,12 @@ export default defineEventHandler(async event => {
             'token': body.token
         },
         body: JSON.stringify({
-            validator: body.validator
+            email: body.email
         })
     })
     .then(response => response.json())
     .then(data => data)
     .catch(error => createError(error))
     
-    console.log(response)
-
     return response
   })
