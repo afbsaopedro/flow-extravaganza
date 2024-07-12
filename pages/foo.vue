@@ -30,7 +30,7 @@ async function foo() {
     <UButton @click="foo" variant="outline">Do the foo</UButton>
     <br>
     <br>
-    <UTable :rows="users"></UTable>
+    <!-- <UTable :rows="users"></UTable> -->
     <br>
     <br>
     <br>
