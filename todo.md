@@ -1,1 +1,3 @@
 - error handling w/ corresponding error message/modal + redirection (redirection to page with contact info?)
+- color of active link in navbar
+- dark mode toggle hover problem
