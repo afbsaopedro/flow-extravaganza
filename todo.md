@@ -1,0 +1,1 @@
+- error handling w/ corresponding error message/modal + redirection (redirection to page with contact info?)
