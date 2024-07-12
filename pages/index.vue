@@ -1,10 +1,7 @@
 <script setup lang="ts">
 let id = ref('')
 
-let users = await $fetch('http://localhost:3000/api/users')
-    .then(response => response)
-
-async function foo() {
+async function postID() {
     const response = await $fetch('/api/auth/id', {
         method: 'POST',
         body: {
@@ -23,9 +20,17 @@ async function foo() {
 </script>
 
 <template>
-    <h1>Foo</h1>
-    <br>
-    <UInput v-model="id" variant="outline" placeholder="ID"/>
-    <br>
-    <UButton @click="foo" variant="outline">Do the foo</UButton>
+    <h1 class="text-2xl font-bold mb-6">Index</h1>
+    <UFormGroup label="ID">
+        <UInput
+            class="caret-red-500"
+            padded
+            v-model="id"
+            variant="outline"
+            placeholder="Example: 76"
+            color="red"
+            size="xl"
+            icon="i-heroicons-finger-print"/>
+    </UFormGroup>
+    <UButton color="red" icon="i-heroicons-paper-airplane" class="my-3" label="Submit" @click="postID"></UButton>
 </template>

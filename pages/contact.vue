@@ -37,20 +37,20 @@ const items = [{
 
 <template>
     <h1 class="text-4xl font-bold mb-6" >Contacts</h1>
-    <UAccordion variant="solid" size="xl" :items="items">
-    <template #email>
-      <div class="text-gray-900 dark:text-white text-center">
-        <ul class="list-disc list-inside text-left">
-            <li v-for="email of contactEmails">{{ email.email }} - {{ email.holder }}</li>
-        </ul>
-      </div>
-    </template>
-    <template #phone>
-      <div class="text-gray-900 dark:text-white text-center">
-        <ul class="list-disc list-inside text-left">
-            <li v-for="phone of contactPhoneNumbers">{{ phone.number }} - {{ phone.holder }}</li>
-        </ul>
-      </div>
-    </template>
-  </UAccordion>
+    <UAccordion color="red" variant="solid" size="xl" :items="items">
+        <template #email>
+            <div class="text-gray-900 dark:text-white text-center">
+                <ul class="list-disc list-inside text-left pl-12">
+                    <li v-for="email of contactEmails">{{ email.email }} - {{ email.holder }}</li>
+                </ul>
+            </div>
+        </template>
+        <template #phone>
+            <div class="text-gray-900 dark:text-white text-center">
+                <ul class="list-disc list-inside text-left pl-12">
+                    <li v-for="phone of contactPhoneNumbers">{{ phone.number }} - {{ phone.holder }}</li>
+                </ul>
+            </div>
+        </template>
+    </UAccordion>
 </template>

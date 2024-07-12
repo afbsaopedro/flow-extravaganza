@@ -1,7 +1,7 @@
 <script setup>
 let validator = ref('')
 
-async function foo() {
+async function postValidator() {
     const response = await $fetch('/api/auth/validate', {
         method: 'POST',
         body: {
@@ -22,9 +22,17 @@ async function foo() {
 </script>
 
 <template>
-    <h1>Validate</h1>
-    <br>
-    <UInput v-model="validator" variant="outline" placeholder="Validator"></UInput>
-    <br>
-    <UButton @click="foo" variant="outline">Do the foo</UButton>
+    <h1 class="text-2xl font-bold mb-6">Validate yourself</h1>
+    <UFormGroup label="Validator">
+        <UInput
+            class="caret-red-500"
+            padded
+            v-model="validator"
+            variant="outline"
+            placeholder="Example: 3C2cCwqEvU"
+            color="red"
+            size="xl"
+            icon="i-heroicons-identification"></UInput>
+    </UFormGroup>
+    <UButton color="red" icon="i-heroicons-paper-airplane" class="my-3" label="Submit" @click="postValidator"></UButton>
 </template>

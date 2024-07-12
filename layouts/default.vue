@@ -1,4 +1,21 @@
 <script setup lang="ts">
+
+const route = useRoute()
+
+const links = [
+  [{
+    label: 'Home',
+    icon: 'i-heroicons-home',
+    to: '/'
+  }, {
+    label: 'Contacts',
+    icon: 'i-heroicons-phone',
+    to: `/contact`
+  },], [{
+    label: 'Theme',
+  },]
+]
+
 const colorMode = useColorMode()
 const isDark = computed({
   get () {
@@ -7,23 +24,29 @@ const isDark = computed({
   set () {
     colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
   }
-})  
+})
 </script>
 
 <template>
-    <ClientOnly>
-    <UButton
-      :icon="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'"
-      color="gray"
-      variant="ghost"
-      aria-label="Theme"
-      label="Theme"
-      @click="isDark = !isDark"
-    />
-    <template #fallback>
-      <div class="w-8 h-8" />
+
+<UHorizontalNavigation :links="links">
+    <template #default="{ link }">
+      <ClientOnly v-if="link.label === 'Theme'">
+        <UButton
+          :icon="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'"
+          color="gray"
+          variant="ghost"
+          aria-label="Theme"
+          @click="isDark = !isDark">
+          <template #fallback>
+            <div class="w-8 h-8" />
+          </template>
+        </UButton>
+    </ClientOnly> 
+      <span v-else class="group-hover:text-red-400 relative">{{ link.label }}</span>
     </template>
-  </ClientOnly>
+  </UHorizontalNavigation>
+
     <UContainer>
         <slot />
     </UContainer>

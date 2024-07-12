@@ -1,7 +1,7 @@
 <script setup>
 let id = ref('')
 
-async function foo(){
+async function postNewUser(){
     let validator = 'validator' + id.value
 
     const response = await $fetch('http://localhost:3000/api/new-user', {
@@ -24,9 +24,17 @@ async function foo(){
 </script>
 
 <template>
-    <h1>New User</h1>
-    <br>
-    <UInput v-model="id" variant="outline" placeholder="ID"/>
-    <br>
-    <UButton @click="foo" variant="outline">Do the foo</UButton>
+    <h1 class="text-2xl font-bold mb-6">New User</h1>
+    <UFormGroup label="New User ID">
+        <UInput
+            class="caret-red-500"
+            padded
+            v-model="id"
+            variant="outline"
+            placeholder="Example: 456"
+            color="red"
+            size="xl"
+            icon="i-heroicons-user-plus"/>
+    </UFormGroup>
+    <UButton color="red" icon="i-heroicons-paper-airplane" class="my-3" label="Submit" @click="postNewUser">Do the foo</UButton>
 </template>
