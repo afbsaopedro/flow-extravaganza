@@ -1,8 +1,19 @@
 <script setup>
 let password = ref('')
 
-function foo() {
-    alert(password.value)
+async function foo() {
+    const response = await $fetch('/api/auth/login', {
+        method: 'POST',
+        body: {
+            password: password.value,
+            token: useState('token').value
+        }
+    })
+    .then(response => response)
+    .then(data => data)
+    .catch(error => createError(error))
+
+    navigateTo(response.redirect)
 }
 </script>
 
