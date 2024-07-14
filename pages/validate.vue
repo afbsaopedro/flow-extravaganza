@@ -25,14 +25,14 @@ async function postValidator() {
     <h1 class="text-2xl font-bold mb-6">Validate yourself</h1>
     <UFormGroup label="Validator">
         <UInput
-            class="caret-red-500"
+            class="caret-primary"
             padded
             v-model="validator"
             variant="outline"
             placeholder="Example: 3C2cCwqEvU"
-            color="red"
+            color="primary"
             size="xl"
             icon="i-heroicons-identification"></UInput>
     </UFormGroup>
-    <UButton color="red" icon="i-heroicons-paper-airplane" class="my-3" label="Submit" @click="postValidator"></UButton>
+    <UButton color="primary" icon="i-heroicons-paper-airplane" class="my-3" label="Submit" @click="postValidator"></UButton>
 </template>

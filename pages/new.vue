@@ -27,14 +27,14 @@ async function postNewUser(){
     <h1 class="text-2xl font-bold mb-6">New User</h1>
     <UFormGroup label="New User ID">
         <UInput
-            class="caret-red-500"
+            class="caret-primary"
             padded
             v-model="id"
             variant="outline"
             placeholder="Example: 456"
-            color="red"
+            color="primary"
             size="xl"
             icon="i-heroicons-user-plus"/>
     </UFormGroup>
-    <UButton color="red" icon="i-heroicons-paper-airplane" class="my-3" label="Submit" @click="postNewUser">Do the foo</UButton>
+    <UButton color="primary" icon="i-heroicons-paper-airplane" class="my-3" label="Submit" @click="postNewUser"></UButton>
 </template>

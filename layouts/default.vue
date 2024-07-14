@@ -40,7 +40,7 @@ const isDark = computed({
           </template>
         </UButton>
     </ClientOnly> 
-      <span v-else class="group-hover:text-red-400 relative">{{ link.label }}</span>
+      <span v-else class="group-hover:text-primary relative">{{ link.label }}</span>
     </template>
   </UHorizontalNavigation>
 

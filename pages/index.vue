@@ -23,14 +23,14 @@ async function postID() {
     <h1 class="text-2xl font-bold mb-6">Index</h1>
     <UFormGroup label="ID">
         <UInput
-            class="caret-red-500"
+            class="caret-primary"
             padded
             v-model="id"
             variant="outline"
             placeholder="Example: 76"
-            color="red"
+            color="primary"
             size="xl"
             icon="i-heroicons-finger-print"/>
     </UFormGroup>
-    <UButton color="red" icon="i-heroicons-paper-airplane" class="my-3" label="Submit" @click="postID"></UButton>
+    <UButton color="primary" icon="i-heroicons-paper-airplane" class="my-3" label="Submit" @click="postID"></UButton>
 </template>

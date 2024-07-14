@@ -21,15 +21,15 @@ async function postPassword() {
     <h1 class="text-2xl font-bold mb-6">Log in</h1>
     <UFormGroup label="Password">
         <UInput
-            class="caret-red-500"
+            class="caret-primary"
             padded
             v-model="password"
             variant="outline"
             placeholder="Password"
-            color="red"
+            color="primary"
             size="xl"
             type="password"
             icon="i-heroicons-lock-closed"/>
     </UFormGroup>
-    <UButton color="red" icon="i-heroicons-paper-airplane" class="my-3" label="Submit" @click="postPassword"></UButton>
+    <UButton color="primary" icon="i-heroicons-paper-airplane" class="my-3" label="Submit" @click="postPassword"></UButton>
 </template>

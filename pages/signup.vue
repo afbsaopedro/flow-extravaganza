@@ -29,18 +29,18 @@ async function postEmail() {
     <h1 class="text-2xl font-bold mb-6">Sign Up</h1>
     <UFormGroup label="E-mail">
         <UInput
-          class="caret-red-500"
+          class="caret-primary"
           padded
           v-model="email"
           variant="outline"
           placeholder="Example: email@service.com"
           type="email"
-          color="red"
+          color="primary"
           size="xl"
           icon="i-heroicons-envelope">
     </UInput>
     </UFormGroup>
-    <UButton color="red" icon="i-heroicons-paper-airplane" class="my-3" label="Submit" @click="postEmail"></UButton>    
+    <UButton color="primary" icon="i-heroicons-paper-airplane" class="my-3" label="Submit" @click="postEmail"></UButton>    
 
     <UModal v-model="redirectDialogue" prevent-close>
       <UCard :ui="{ ring: '', divide: '' }">
