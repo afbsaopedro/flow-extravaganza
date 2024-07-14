@@ -18,7 +18,7 @@ async function postPassword() {
 </script>
 
 <template>
-    <h1 class="text-2xl font-bold mb-6">Log in</h1>
+    <h1 class="text-2xl font-bold mb-6 text-primary">Log in</h1>
     <UFormGroup label="Password">
         <UInput
             class="caret-primary"

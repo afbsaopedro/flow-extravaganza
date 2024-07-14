@@ -22,7 +22,7 @@ async function postValidator() {
 </script>
 
 <template>
-    <h1 class="text-2xl font-bold mb-6">Validate yourself</h1>
+    <h1 class="text-2xl font-bold mb-6 text-primary">Validate yourself</h1>
     <UFormGroup label="Validator">
         <UInput
             class="caret-primary"

@@ -24,7 +24,7 @@ async function postNewUser(){
 </script>
 
 <template>
-    <h1 class="text-2xl font-bold mb-6">New User</h1>
+    <h1 class="text-2xl font-bold mb-6 text-primary">New User</h1>
     <UFormGroup label="New User ID">
         <UInput
             class="caret-primary"

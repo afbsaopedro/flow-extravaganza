@@ -26,7 +26,7 @@ async function postEmail() {
 </script>
 
 <template>
-    <h1 class="text-2xl font-bold mb-6">Sign Up</h1>
+    <h1 class="text-2xl font-bold mb-6 text-primary">Sign Up</h1>
     <UFormGroup label="E-mail">
         <UInput
           class="caret-primary"
