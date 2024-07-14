@@ -7,5 +7,6 @@ const token = useState('token')
       <NuxtLayout>
         <NuxtPage/>
       </NuxtLayout>
+      <UNotifications />
     </div>
   </template>
