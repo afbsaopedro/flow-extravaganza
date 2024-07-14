@@ -9,8 +9,14 @@ const links = [
     icon: 'i-heroicons-phone',
     to: `/contact`
   },], [{
-    label: 'Theme',
-  },]
+    label: 'New User',
+    icon: 'i-heroicons-bug-ant',
+    to: '/new'
+  },{
+    label: 'List of users',
+    icon: 'i-heroicons-bug-ant',
+    to: '/users'
+  }]
 ]
 
 const colorMode = useColorMode()
