@@ -1,4 +1,7 @@
 <script setup>
+const toast = useToast()
+toast.clear()
+
 let password = ref('')
 
 async function postPassword() {
