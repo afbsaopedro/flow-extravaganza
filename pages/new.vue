@@ -19,7 +19,7 @@ async function postNewUser(){
     .then(data => data)
     .catch(error => createError(error))
 
-    navigateTo('/foo')
+    navigateTo('/')
 }
 </script>
 

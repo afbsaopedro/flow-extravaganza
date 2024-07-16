@@ -12,7 +12,33 @@ async function postPassword() {
             token: useState('token').value
         }
     })
-    .then(response => response)
+    .then(response => {
+        if('redirect' in response) {
+            toast.add({
+                title: 'Valid ID',
+                description: 'You will be redirect as soon as possible.',
+                icon: 'i-heroicons-check-circle',
+                color: "primary",
+                timeout: 6000,
+            })
+            return response
+        } else {
+            toast.add({
+                title: 'Wrong Password',
+                description: 'You have entered the wrong password.\nIf you have forgotten your password, please contact us.',
+                icon: 'i-heroicons-x-circle',
+                color: "red",
+                timeout: 6000,
+                actions: [{
+                    label: 'Contact',
+                    click: () => {
+                        navigateTo('/contact')
+                    }
+                }]
+                })
+            return response
+        }
+    })
     .then(data => data)
     .catch(error => createError(error))
 
