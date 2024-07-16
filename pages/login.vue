@@ -15,7 +15,7 @@ async function postPassword() {
     .then(response => {
         if('redirect' in response) {
             toast.add({
-                title: 'Valid ID',
+                title: 'Valid Password',
                 description: 'You will be redirect as soon as possible.',
                 icon: 'i-heroicons-check-circle',
                 color: "primary",

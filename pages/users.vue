@@ -1,4 +1,7 @@
 <script setup>
+const toast = useToast()
+toast.clear()
+
 const users = await $fetch('http://localhost:3000/api/users')
 .then(response => response)
 </script>

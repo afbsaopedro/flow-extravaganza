@@ -1,4 +1,7 @@
 <script setup>
+const toast = useToast()
+toast.clear()
+
 let validator = ref('')
 
 async function postValidator() {
@@ -9,7 +12,33 @@ async function postValidator() {
             token: useState('token').value
         }
     })
-    .then(response => response)
+    .then(response => {
+        if('redirect' in response) {
+            toast.add({
+                title: 'Good Validator',
+                description: 'You will be redirect as soon as possible.',
+                icon: 'i-heroicons-check-circle',
+                color: "primary",
+                timeout: 6000,
+            })
+            return response
+        } else {
+            toast.add({
+                title: 'Bad Validator',
+                description: 'Validator is invalid.\nIf the problem persists, please contact us.',
+                icon: 'i-heroicons-x-circle',
+                color: "red",
+                timeout: 6000,
+                actions: [{
+                    label: 'Contact',
+                    click: () => {
+                        navigateTo('/contact')
+                    }
+                }]
+                })
+            return response
+        }
+    })
     .then(data => data)
     .catch(error => createError(error))
 

@@ -1,4 +1,7 @@
 <script setup>
+const toast = useToast()
+toast.clear()
+
 let id = ref('')
 
 async function postNewUser(){

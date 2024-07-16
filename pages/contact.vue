@@ -1,4 +1,6 @@
 <script setup>
+const toast = useToast()
+toast.clear()
 
 const contactEmails = [
     {

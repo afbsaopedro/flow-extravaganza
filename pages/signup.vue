@@ -1,4 +1,9 @@
 <script setup>
+const toast = useToast()
+toast.clear()
+
+const foo = ref('')
+
 let email = ref('')
 const redirectDialogue = ref(false)
 
@@ -14,13 +19,40 @@ async function postEmail() {
             token: useState('token').value
         }
     })
-    .then(response => response)
+    .then(response => {
+        if('redirect' in response) {
+            toast.add({
+                title: 'Valid E-mail',
+                description: 'You will be redirect as soon as possible.',
+                icon: 'i-heroicons-check-circle',
+                color: "primary",
+                timeout: 6000,
+            })
+            foo.value = '/login'
+            return response
+        } else {
+            toast.add({
+                title: 'Bad E-mail',
+                description: 'If the problem persists, please contact us.',
+                icon: 'i-heroicons-x-circle',
+                color: "red",
+                timeout: 6000,
+                actions: [{
+                    label: 'Contact',
+                    click: () => {
+                        navigateTo('/contact')
+                    }
+                }]
+                })
+                foo.value = '/'
+            return response
+        }
+    })
     .then(data => data)
     .catch(error => createError(error))
 
     setTimeout(function() {
-        alert('timeout')
-        // navigateTo('/login')
+        navigateTo(foo.value)
     }, 3000)
 }
 </script>
@@ -52,9 +84,9 @@ async function postEmail() {
             <UButton color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid" class="my-1" @click="redirectDialogue = false" />
           </div>
         </template>
-        <p>You will be redirect to the log in page.</p>
+        <p>You will be redirected to the log in page.</p>
         <p>After 5 seconds, if you haven't been redirect, click the button.</p>
-        <UButton color="red" class="my-3"label="Go to page" @click="navigateTo('/login')"></UButton>
+        <UButton color="primary" class="my-3"label="Go to page" @click="navigateTo('/login')"></UButton>
       </UCard>
     </UModal>
 </template>
