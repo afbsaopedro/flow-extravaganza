@@ -1,7 +1,7 @@
 export default defineEventHandler(async event => {
     const incoming = await readBody(event)
 
-    const response = await fetch('http://169.50.171.107:7050/dummy/debug/user', {
+    const response = await fetch('authentication/api/endpoint/here', {
         method: 'POST',
         headers: {
             'accept': '*/*',
